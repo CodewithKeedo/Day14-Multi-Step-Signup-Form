@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+        <div class="progress-step" data-title ="Personal Info">1</div>
+        <div class="progress-step" data-title ="Contact Info">2</div>
+        <div class="progress-step" data-title ="Account Setup">3</div>
+        </div>
+    <form id="multi-step-form" autocomplete="off">
+        <!--Step 1:Personal Info-->
+        <div class="form-step" id="step-1">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name="First name" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="Last name" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="Date of birth" id="dob" required>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn next-btn" onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
+        <!--Step 2:Contact Info-->
+        <div class="form-step" id="step-2">
+            <h2>Contact Information</h2>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" required>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn prev-btn" onclick="prevStep(1)">Previous</button>
+                <button type="button" class="btn next-btn" onclick="nextStep(3)">Next</button>
+            </div>
+        </div>
+        <!--Step 3: Account Setup-->
+        <div class="form-step" id="step-3">
+        <h2>Account Setup</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" autocomplete="new-password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label></label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn prev-btn" onclick="prevStep(2)">Previous</button>
+            <button type="submit" class="btn submit-btn">Submit</button>
+        </div>
+        </div>
+    </form>
+   </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
